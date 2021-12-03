@@ -70,7 +70,6 @@ if __name__ == "__main__":
 
     a("소진")
     file_list = get_file_list()
-    print(file_list)
 
     # db 연결
     CON = db_connect()
