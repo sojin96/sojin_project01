@@ -1,7 +1,5 @@
 import os
 import sqlite3
-conn = sqlite3.connect('data.db')
-c = conn.cursor()
 
 
 def a(name):
@@ -77,16 +75,18 @@ if __name__ == "__main__":
     CON = db_connect()
     print(CON)
 
-    #CUR = CON.cursor()
+    CUR = CON.cursor()
 
-    add_data(file_list)
+    # add_data(file_list)
 
-    c.execute("select * from new")
+    while True:
 
-    # 한줄읽기
-    read1 = c.fetchone()
-    print(read1)
+        CUR.execute("select * from new")
 
-    # 전부읽기
-    read2 = c.fetchall()
-    print(read2)
+        # 한줄읽기
+        read1 = CUR.fetchone()
+        print(read1)
+
+        # 전부읽기
+        read2 = CUR.fetchall()
+        print(read2)
